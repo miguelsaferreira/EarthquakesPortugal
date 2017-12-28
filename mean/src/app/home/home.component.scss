@@ -1,0 +1,26 @@
+tr.safe td {
+	background-color: #3498db;
+}
+
+tr.warning td{
+    background-color: #ffbb00;   
+}
+
+tr.danger td{
+    background-color: #df2323;
+}
+
+#margin{
+    margin-top: -10px;
+    margin-bottom: -60px;
+
+}
+
+.button{
+    height: 2.2em;
+    margin-left: 8px;
+}
+
+agm-map {
+    height: 700px;
+}

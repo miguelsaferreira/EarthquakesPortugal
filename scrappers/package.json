@@ -1,0 +1,27 @@
+{
+  "name": "earthquakes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.5",
+    "mongoose-double": "0.0.1",
+    "puppeteer": "^0.13.0",
+    "request": "^2.83.0",
+    "x-ray": "^2.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "nodemon": "^1.12.1",
+    "typescript": "^2.6.1"
+  }
+}

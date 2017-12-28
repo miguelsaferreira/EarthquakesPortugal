@@ -1,0 +1,107 @@
+<section class="section" id="margin">
+  <form (submit)="onSubmit(month.value,year.value)">
+    <span class="select is-small">
+      <select #month>
+        <option>Month</option>
+        <option *ngFor="let key of arrayOfMonths" [value]="key">{{key}}</option>
+      </select>
+    </span>
+    <span class="select is-small">
+      <select #year>
+        <option>Year</option>
+        <option *ngFor="let key of arrayOfYears" [value]="key">{{key}}</option>
+      </select>
+    </span>
+    <button class="button is-success">
+      Search
+    </button>
+  </form>
+</section>
+
+<div class="columns">
+  <div class="column is-6">
+
+    <section class="section" id="typography">
+      <h1 class="title"> List of earthquakes </h1>
+      <hr>
+
+      <div class="tags">
+        <span class="tag is-dark">Not Felt</span>
+        <span class="tag is-info">Degree I <> IV/V </span>
+        <span class="tag is-warning">Degree V <> VI</span>
+        <span class="tag is-danger">Degree VI/VII <> X</span>
+      </div>
+
+      <table class="table is-fullwidth">
+        <thead>
+          <tr>
+            <th>
+              <abbr title="Position"> Date </abbr>
+            </th>
+            <th> Latitude </th>
+            <th>
+              <abbr title="Played"> Longitude </abbr>
+            </th>
+            <th>
+              <abbr title="Won"> Magnitude </abbr>
+            </th>
+            <th>
+              <abbr title="Drawn"> Local </abbr>
+            </th>
+            <th>
+              <abbr title="Lost"> Degree </abbr>
+            </th>
+          </tr>
+        </thead>
+        <tbody *ngIf="earthquakes">
+          <tr *ngFor="let key of earthquakes; let i = index;" [ngClass]="{'safe': safe.indexOf(key.degree) > -1 , 'warning': warning.indexOf(key.degree) > -1 , 'danger': danger.indexOf(key.degree) > -1}">
+            <td>{{key.date | date:'d/M/y HH:mm'}}</td>
+            <td>{{key.lat}}</td>
+            <td>{{key.lon}}</td>
+            <td>{{key.mag}}</td>
+            <td>{{key.local}}</td>
+            <td>{{key.degree}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+  </div>
+
+  <div class="column">
+    <section class="section" id="typography">
+      <h1 class="title"> Earthquakes activity </h1>
+      <hr>
+
+      <agm-map 
+      [latitude]="lat" 
+      [longitude]="lng" 
+      [zoom]="zoom" 
+      [styles]="styles">
+
+        <agm-marker *ngFor="let m of earthquakes; let i = index" 
+        [latitude]="m.lat" 
+        [longitude]="m.lon"
+        [iconUrl]="markerIconUrl(m.degree)">  
+
+          <agm-info-window>
+            <div class="box">
+              <b>Local: {{m.local}}
+                <br> Date: {{m.date | date:'d/M/y'}}
+                <br> Time: {{m.date | date:'HH:mm'}}
+                <br> Degree: {{m.degree}}
+                <br> Latitude: {{m.lat}}
+                <br> Longitude: {{m.lon}}
+                <br> Magnitude: {{m.mag}}</b>
+
+            </div>
+          </agm-info-window>
+
+        </agm-marker>
+
+      </agm-map>
+
+    </section>
+
+  </div>
