@@ -73,3 +73,5 @@
 
 # Node Files #
 /scrappers/node_modules
+
+.eslintrc.js

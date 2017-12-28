@@ -2,16 +2,16 @@
 
 This app displays earthquakes in Portugal including Madeira, Açores and near coast Country since December 1995 untill the month of the current Year.
 
-It is divided in two parts:
-* 1st: A scrapper that will get data for a specific date interval from [IPMA.pt](https://www.ipma.pt/pt/geofisica/sismologia/) and save it to a Mongo Database. I built two scrappers for practice purposes one using Puppeteer and other using X-Ray, they get the same results but work in different ways. Puppeteer selects the date from the dropdown, then extracts data multiple times from the DOM and saves to Mongo DB (Takes ~14min to extract 3.4Mb data). X-Ray is making multiple requests to an hidden/unnoficial API, parsing the HTML result and saving to Mongo DB. (Takes ~10min to extract the same 3.4Mb data ).
-* 2nd: MEAN single app with an API and Angular Google Maps Components integration that interacts with the data gathered by the selected scrapper. (TODO: cron job to execute X-Ray for the current month).
-
-
-
 ## Screenshots
 
-| ![Scraping](https://raw.githubusercontent.com/miguelsaferreira/EarthquakesPortugal/master/mean/src/assets/img/scraping.gif)  | ![Screenshot](https://raw.githubusercontent.com/miguelsaferreira/EarthquakesPortugal/master/mean/src/assets/img/screenshot.png) |
+https://github.com/miguelsaferreira/earthquakesPortugal/blob/master/mean/src/assets/img/scraping.gif
+
+| ![Scraping](https://github.com/miguelsaferreira/earthquakesPortugal/blob/master/mean/src/assets/img/scraping.gif)  | ![Screenshot](https://github.com/miguelsaferreira/earthquakesPortugal/blob/master/mean/src/assets/img/screenshot.png) |
 |-|-|
+
+The project  is divided in two parts:
+* 1st: A scrapper that will get data for a specific date interval from [IPMA.pt](https://www.ipma.pt/pt/geofisica/sismologia/) and save it to a Mongo Database. I built two scrappers for practice purposes one using Puppeteer and other using X-Ray, they get the same results but work in different ways. Puppeteer selects date from the dropdown, then extracts data multiple times from the DOM and saves to Mongo DB (Takes ~14min to extract 3.4Mb data). X-Ray is making multiple requests to an hidden/unnoficial API, parsing the HTML result and saving to Mongo DB. (Takes ~10min to extract the same 3.4Mb data ).
+* 2nd: MEAN single app with an API and Angular Google Maps Components integration that interacts with the data gathered by the selected scrapper. (TODO: cron job to execute X-Ray for the current month).
 
 
 ## Getting started 
@@ -47,7 +47,7 @@ Run npm install on both mean and scrappers folder to install the dependencies in
 * Remove unused depedencies from the default MEAN boilerplate.
 
 ## Built with
-* [Puppeteer](https://github.com/GoogleChrome/puppeteer) - Headless  browser
+* [Puppeteer](https://github.com/GoogleChrome/puppeteer) - Chrome Headless  Browser for Web Scrapping
 * [X-Ray](https://github.com/matthewmueller/x-ray) - Web scrapper
 * [MEAN](https://github.com/linnovate/mean) - MEAN stack boilerplate
 * [AGM](https://github.com/SebastianM/angular-google-maps) - Angular 2+ Google Maps Components
