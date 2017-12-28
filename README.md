@@ -4,8 +4,6 @@ This app displays earthquakes in Portugal including Madeira, Açores and near co
 
 ## Screenshots
 
-https://github.com/miguelsaferreira/earthquakesPortugal/blob/master/mean/src/assets/img/scraping.gif
-
 | ![Scraping](https://github.com/miguelsaferreira/earthquakesPortugal/blob/master/mean/src/assets/img/scraping.gif)  | ![Screenshot](https://github.com/miguelsaferreira/earthquakesPortugal/blob/master/mean/src/assets/img/screenshot.png) |
 |-|-|
 
